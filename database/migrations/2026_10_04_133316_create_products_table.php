@@ -21,11 +21,11 @@ return new class extends Migration
             $table->decimal('price', 10, 2);
             $table->decimal('compare_price', 10, 2)->nullable();
             $table->string('unit');
-            $table->string('stock_quantity')->default(0);
-            $$table->integer('min_order_quality')->default(1);
+            $table->integer('stock_quantity')->default(0);
+            $table->integer('min_order_quality')->default(1);
             $table->boolean('is_organic')->default(true);
             $table->boolean('is_featured')->default(false);
-            $table->enum('status', ['in_stock', 'out_of_stock', 'inactive', 'active'])->default('in_active');
+            $table->enum('status', ['in_stock', 'out_of_stock', 'inactive', 'active'])->default('inactive');
             $table->date('harvest_date')->nullable();
             $table->softDeletes();
             $table->timestamps();
